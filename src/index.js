@@ -42,9 +42,7 @@ export function markedHighlight(options) {
           code = code.text;
         }
         const lang = getLang(infoString);
-        const classAttr = lang
-          ? ` class="${options.langPrefix}${escape(lang)}"`
-          : '';
+        const classAttr = ` class="${options.langPrefix}${escape(lang)}"`;
         code = code.replace(/\n$/, '');
         return `<pre><code${classAttr}>${escaped ? code : escape(code, true)}\n</code></pre>`;
       },
